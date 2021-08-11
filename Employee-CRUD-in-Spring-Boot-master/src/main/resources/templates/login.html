@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<nav th:replace="layout :: header"></nav>
+
+<div class="container main-content form">
+    <div class="row">
+        <form action="#" th:action="@{/student/login}" th:object="${user}"
+              method="POST" >
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control"
+                       th:field="*{email}" />
+            </div>
+            <div class="form-group">
+                <label>password</label>
+                <input type="password" class="form-control"
+                       th:field="*{password}" />
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div><!-- /.container -->
+
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
